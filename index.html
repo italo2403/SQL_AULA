@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Login Vulnerável</title>
+<style>
+body {
+    background: #eee;
+    font-family: Arial;
+}
+.box {
+    width: 300px;
+    margin: 120px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #999;
+}
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+button {
+    background: #2c7be5;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Login</h2>
+
+<form method="POST" action="login.php">
+    <input type="text" name="usuario" placeholder="Usuário" required>
+    <input type="password" name="senha" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+</form>
+
+<p><b>Tente SQL Injection:</b></p>
+<pre>
+Usuário:
+    admin' OR '1'='1
+Senha:
+    qualquer coisa
+</pre>
+
+</div>
+
+</body>
+</html>
